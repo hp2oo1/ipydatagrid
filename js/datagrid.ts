@@ -5,7 +5,7 @@ import * as _ from 'underscore';
 
 import { BasicSelectionModel, TextRenderer } from '@lumino/datagrid';
 
-import { CellRenderer } from '@lumino/datagrid';
+import { CellRenderer, DataGrid as LuminoDataGrid } from '@lumino/datagrid';
 
 import { JSONExt } from '@lumino/coreutils';
 
@@ -524,6 +524,7 @@ export class DataGridView extends DOMWidgetView {
         columnHeaderHeight: this.model.get('base_column_header_size'),
       },
       headerVisibility: this.model.get('header_visibility'),
+      copyConfig: {...LuminoDataGrid.defaultCopyConfig, headers: this.model.get('copy_config_headers')},
       style: grid_style,
     });
 
@@ -597,6 +598,10 @@ export class DataGridView extends DOMWidgetView {
     this.model.on('change:header_visibility', () => {
       this.grid.headerVisibility = this.model.get('header_visibility');
     });
+
+    this.model.on('change:copy_config_headers', () => {
+      this.grid.copyConfig = {...this.grid.copyConfig, headers: this.model.get('copy_config_headers')};
+    })
 
     this.model.on_some_change(
       [

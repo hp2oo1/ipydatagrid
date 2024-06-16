@@ -121,6 +121,7 @@ export class FeatherGrid extends Widget {
         options.defaultSizes.columnHeaderHeight || this._baseColumnHeaderSize;
     }
     this._headerVisibility = options.headerVisibility || this._headerVisibility;
+    this._copyConfig = options.copyConfig || this._copyConfig;
 
     this._createGrid(options);
 
@@ -285,6 +286,14 @@ export class FeatherGrid extends Widget {
     return this._headerVisibility;
   }
 
+  set copyConfig(config: DataGrid.CopyConfig) {
+    this._copyConfig = config;
+  }
+
+  get copyConfig(): DataGrid.CopyConfig {
+    return this._copyConfig;
+  }
+
   set defaultRenderer(renderer: CellRenderer) {
     this._defaultRenderer = renderer;
     this._defaultRendererSet = true;
@@ -419,6 +428,7 @@ export class FeatherGrid extends Widget {
           columnHeaderHeight: this._baseColumnHeaderSize,
         },
         headerVisibility: this._headerVisibility,
+        copyConfig: this._copyConfig
       },
     });
 
@@ -1084,6 +1094,7 @@ export class FeatherGrid extends Widget {
   private _baseColumnHeaderSize = 20;
   private _columnWidths: Dict<number> = {};
   private _headerVisibility: DataGrid.HeaderVisibility = 'all';
+  private _copyConfig: DataGrid.CopyConfig = DataGrid.defaultCopyConfig;
   private _dataModel: ViewBasedJSONModel;
   private _selectionModel: BasicSelectionModel | null;
   private _editable: boolean;

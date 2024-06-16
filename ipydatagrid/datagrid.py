@@ -388,6 +388,10 @@ class DataGrid(DOMWidget):
         default_value="all", values=["all", "row", "column", "none"]
     ).tag(sync=True)
 
+    copy_config_headers = Enum(
+        default_value="none", values=["none", "row", "column", "all"]
+    ).tag(sync=True)
+
     _transforms = List(Dict()).tag(sync=True, **widget_serialization)
     _visible_rows = List(Int()).tag(sync=True)
     _data = Dict().tag(sync=True, **_data_serialization)
