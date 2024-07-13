@@ -170,5 +170,25 @@
       }
     }
   },
-  "packageManager": "yarn@3.7.0"
+  "packageManager": "yarn@3.7.0",
+  "resolutions": {
+    "@lumino/buildutils": "portal:/D:/GitHub/myJupyterLab/lumino/buildutils",
+    "@lumino/algorithm": "portal:/D:/GitHub/myJupyterLab/lumino/packages/algorithm",
+    "@lumino/collections": "portal:/D:/GitHub/myJupyterLab/lumino/packages/collections",
+    "@lumino/commands": "portal:/D:/GitHub/myJupyterLab/lumino/packages/commands",
+    "@lumino/coreutils": "portal:/D:/GitHub/myJupyterLab/lumino/packages/coreutils",
+    "@lumino/datagrid": "portal:/D:/GitHub/myJupyterLab/lumino/packages/datagrid",
+    "@lumino/default-theme": "portal:/D:/GitHub/myJupyterLab/lumino/packages/default-theme",
+    "@lumino/disposable": "portal:/D:/GitHub/myJupyterLab/lumino/packages/disposable",
+    "@lumino/domutils": "portal:/D:/GitHub/myJupyterLab/lumino/packages/domutils",
+    "@lumino/dragdrop": "portal:/D:/GitHub/myJupyterLab/lumino/packages/dragdrop",
+    "@lumino/keyboard": "portal:/D:/GitHub/myJupyterLab/lumino/packages/keyboard",
+    "@lumino/messaging": "portal:/D:/GitHub/myJupyterLab/lumino/packages/messaging",
+    "@lumino/polling": "portal:/D:/GitHub/myJupyterLab/lumino/packages/polling",
+    "@lumino/properties": "portal:/D:/GitHub/myJupyterLab/lumino/packages/properties",
+    "@lumino/signaling": "portal:/D:/GitHub/myJupyterLab/lumino/packages/signaling",
+    "@lumino/virtualdom": "portal:/D:/GitHub/myJupyterLab/lumino/packages/virtualdom",
+    "@lumino/widgets": "portal:/D:/GitHub/myJupyterLab/lumino/packages/widgets",
+    "@lumino/application": "portal:/D:/GitHub/myJupyterLab/lumino/packages/application"
+  }
 }

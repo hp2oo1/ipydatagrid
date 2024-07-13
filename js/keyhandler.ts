@@ -50,25 +50,34 @@ export class KeyHandler extends BasicKeyHandler {
    * @param event - The keyboard event of interest.
    */
   onKeyDown(grid: DataGrid, event: KeyboardEvent): void {
-    // console.log('KeyDown event detected');
+    console.log('KeyDown event detected');
 
     // Bail if no selection model exists
     if (!grid.selectionModel) {
-      // console.log('No selection model found, exiting');
+      console.log('No selection model found, exiting');
       return;
     }
 
     // Check for Ctrl + C key combination
     if (event.ctrlKey && event.key === 'c') {
-      // console.log('Ctrl + C detected');
+      console.log('Ctrl + C detected');
       grid.copyToClipboard();
       event.preventDefault();  // Prevent default browser copy behavior
       event.stopPropagation(); // Stop event propagation to other listeners
       return;  // Exit after handling Ctrl + C
-    } else {
-      // Handle other key events if necessary
-      // console.log('Other key combination detected, passing to base handler');
-      super.onKeyDown(grid, event);  // Optionally call the base method for other keys
     }
+
+    // Check for Ctrl + V key combination
+    if (event.ctrlKey && event.key === 'v') {
+      console.log('Ctrl + V detected');
+      grid.pasteFromClipboard((text: string) => console.log(text));
+      event.preventDefault();  // Prevent default browser copy behavior
+      event.stopPropagation(); // Stop event propagation to other listeners
+      return;  // Exit after handling Ctrl + V
+    }
+
+    // Handle other key events if necessary
+    console.log('Other key combination detected, passing to base handler');
+    super.onKeyDown(grid, event);  // Optionally call the base method for other keys
   }
 }
